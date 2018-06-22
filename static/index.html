@@ -1,0 +1,539 @@
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Buyut's Log</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="assets/built/screen.css?v=94e9090f23">
+
+    <meta name="description" content="Thoughts, stories and ideas in open source programming">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Buyut's Log">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Buyut's Log">
+    <meta property="og:description" content="Thoughts, stories and ideas in open source programming">
+    <meta property="og:url" content="http://localhost:2373/">
+    <meta property="og:image" content="http://localhost:2373/content/images/2018/06/blog-cover.jpg">
+    <meta property="article:publisher" content="https://www.facebook.com/jokorivai">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buyut's Log">
+    <meta name="twitter:description" content="Thoughts, stories and ideas in open source programming">
+    <meta name="twitter:url" content="http://localhost:2373/">
+    <meta name="twitter:image" content="http://localhost:2373/content/images/2018/06/blog-cover.jpg">
+    <meta name="twitter:site" content="@jokorivai">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="666">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Buyut&#x27;s Log",
+        "logo": "http://localhost:2373/content/images/2018/06/ghost-logo-1.png"
+    },
+    "url": "http://localhost:2373/",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2373/content/images/2018/06/blog-cover.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2373/"
+    },
+    "description": "Thoughts, stories and ideas in open source programming"
+}
+    </script>
+
+    <script src="public/ghost-sdk.js?v=94e9090f23"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "afaa58a5afaf"
+});
+</script>
+    <meta name="generator" content="Ghost 1.24">
+    <link rel="alternate" type="application/rss+xml" title="Buyut's Log" href="rss/index.html">
+
+</head>
+<body class="home-template">
+
+    <div class="site-wrapper">
+
+        
+<header class="site-header outer " style="background-image: url(content/images/2018/06/blog-cover.jpg)">
+    <div class="inner">
+        <div class="site-header-content">
+            <h1 class="site-title">
+                    <img class="site-logo" src="content/images/2018/06/ghost-logo-1.png" alt="Buyut's Log">
+            </h1>
+            <h2 class="site-description">Thoughts, stories and ideas in open source programming</h2>
+        </div>
+        <nav class="site-nav">
+    <div class="site-nav-left">
+            <ul class="nav" role="menu">
+    <li class="nav-home nav-current" role="menuitem"><a href="index.html">Home</a></li>
+    <li class="nav-tabris-js" role="menuitem"><a href="tag/tabris-js/">Tabris JS</a></li>
+    <li class="nav-delphi-pascal" role="menuitem"><a href="tag/delphi-pascal/">Delphi &amp; Pascal</a></li>
+    <li class="nav-about" role="menuitem"><a href="tag/about/">About</a></li>
+</ul>
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+                <a class="social-link social-link-fb" href="https://www.facebook.com/jokorivai" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+</a>
+                <a class="social-link social-link-tw" href="https://twitter.com/jokorivai" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+</a>
+        </div>
+            <a class="subscribe-button" href="index.html#subscribe">Subscribe</a>
+    </div>
+</nav>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <div class="post-feed">
+
+                <article class="post-card post tag-tabris-js tag-ui tag-ios tag-android">
+        <a class="post-card-image-link" href="menampilkan-image-pada-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1519483057039-eced84d8025a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=e41487274c66a4d3cd7ac8e0550a3860)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="menampilkan-image-pada-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Tabris JS</span>
+                <h2 class="post-card-title">Menampilkan Image Pada Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Satu gambar mewakili seribu kata, demikian kata pujangga... Dah ah, besok lanjut ya... deh, di github kok gak berubah?</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-tabris-js tag-page-tag tag-ui tag-ios tag-android">
+        <a class="post-card-image-link" href="membuat-page-aplikasi-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1525770041010-2a1233dd8152?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=48bedd6b6e643fed83abf85637dd0f7f)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="membuat-page-aplikasi-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Tabris JS</span>
+                <h2 class="post-card-title">Membuat Page Aplikasi Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Sangat mudah membuat Page pada UI aplikasi yang dibangun dengan Tabris JS.</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">2 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started tag-tabris-js">
+        <a class="post-card-image-link" href="membuat-aplikasi-baru-pada-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=03ab0f1f7f7846337bb3826911dfb778)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="membuat-aplikasi-baru-pada-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Membuat Aplikasi Baru Pada Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Menyiapkan Aplikasi Baru Pada Tabris JS menggunakan Tabris CLI. Bila Anda belum menginstal Tabris JS dan kelengkapannya, silahkan baca di sini: Membangun Aplikasi Pertama Dengan Tabris JS Siapkan sebuah directory kosong untuk projek,</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-tabris-js tag-button tag-ios tag-android">
+        <a class="post-card-image-link" href="membuat-button-pada-aplikasi-mobile-dengan-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1457433575995-8407028a9970?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e0ca51aa7e06e3f3625b39355ad2619)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="membuat-button-pada-aplikasi-mobile-dengan-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Tabris JS</span>
+                <h2 class="post-card-title">Membuat Button Pada Aplikasi Mobile dengan Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Button atau tombol dapat dengan mudah dibuat pada Tabris JS. Untuk membuat button, kita gunakan class Button bawaan Tabris JS. Kita perlu mendeklarasikan class Button ini dengan const {Button} = require('tabris');, kemudian setelah</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">3 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started tag-tabris-js">
+        <a class="post-card-image-link" href="tabris-js-qr-code-generator/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e3edb1ed96484267911f41022ea2045)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="tabris-js-qr-code-generator/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Tabris JS, QR Code Generator</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Untuk membuat QR Code, pakai Tabris JS sangat mudah! QR Code adalah sejenis grafis yang berisi kode-kode/data tertentu yang di-encode, yang nantinya dapat dibaca kembali data aslinya. Proses membaca kembali dilakukan dengan</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">3 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started tag-tabris-js">
+        <a class="post-card-image-link" href="mambuat-navigasi-sidebar-dengan-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1528254609158-ae7dfaa48ab3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=ad92e92401a98dd35c11caac4bf15e95)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="mambuat-navigasi-sidebar-dengan-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Mambuat Navigasi Sidebar Dengan Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Ghost has a number of different user roles for your team Authors The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-about tag-getting-started featured">
+        <a class="post-card-image-link" href="welcome/">
+            <div class="post-card-image" style="background-image: url(content/images/2018/06/coding-926242_1920-1.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="welcome/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">about</span>
+                <h2 class="post-card-title">Welcome To Buyut's Log</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Here are a few words about this blog and what I am interested ini.</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started tag-tabris-js">
+        <a class="post-card-image-link" href="berkenalan-dengan-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://casper.ghost.org/v1.0.0/images/writing.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="berkenalan-dengan-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Berkenalan Dengan Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Tabris JS, seperti React Native dan NativeScript, adalah framework Tabris JS adalah salah satu framework untuk membangun **Aplikasi Native** untuk Android, iOS dan Windows Mobile.</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">2 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started tag-tabris-js">
+        <a class="post-card-image-link" href="membangun-aplikasi-pertama-dengan-tabris-js/">
+            <div class="post-card-image" style="background-image: url(https://images.unsplash.com/photo-1514996550219-62672472d03b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=30e79fb6a41ae06eb9aff240a4fb0f6c)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="membangun-aplikasi-pertama-dengan-tabris-js/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Membangun Aplikasi Pertama Dengan Tabris JS</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Kita akan menginstall Tabris JS, membuat aplikasi pertama dan mengujinya di iOS dan Android. Catatan, saya bukan penggemar Linux dan tidak punya mesin Linux, sehingga saat ini saya tak dapat menulis tentang Membangun</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">4 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started">
+        <a class="post-card-image-link" href="advanced-markdown/">
+            <div class="post-card-image" style="background-image: url(https://casper.ghost.org/v1.0.0/images/advanced.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="advanced-markdown/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Advanced Markdown tips</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>There are lots of powerful things you can do with the Ghost editor If you've gotten pretty comfortable with all the basics of writing in Ghost, then you may enjoy some more advanced</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">2 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+
+                <article class="post-card post tag-getting-started">
+        <a class="post-card-image-link" href="themes/">
+            <div class="post-card-image" style="background-image: url(https://casper.ghost.org/v1.0.0/images/design.jpg)"></div>
+        </a>
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="themes/">
+            <header class="post-card-header">
+                    <span class="post-card-tags">Getting Started</span>
+                <h2 class="post-card-title">Setting up your own Ghost theme</h2>
+            </header>
+            <section class="post-card-excerpt">
+                <p>Creating a totally custom design for your publication Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for</p>
+            </section>
+        </a>
+        <footer class="post-card-meta">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+
+                    <div class="author-name-tooltip">
+                        Joko Rivai
+                    </div>
+
+                        <a href="author/buyut/" class="static-avatar"><img class="author-profile-image" src="content/images/2018/06/buyut.png" alt="Joko Rivai"></a>
+                </li>
+            </ul>
+
+            <span class="reading-time">1 min read</span>
+
+        </footer>
+    </div>
+</article>
+
+        </div>
+
+    </div>
+</main>
+
+
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="index.html">Buyut's Log</a> © 2018</section>
+                <nav class="site-footer-nav">
+                    <a href="index.html">Latest Posts</a>
+                    <a href="https://www.facebook.com/jokorivai" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/jokorivai" target="_blank" rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="index.html#"></a>
+        <div class="subscribe-overlay-content">
+                <img class="subscribe-overlay-logo" src="content/images/2018/06/ghost-logo-1.png" alt="Buyut's Log">
+            <h1 class="subscribe-overlay-title">Subscribe to Buyut's Log</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+            <form method="post" action="http://localhost:2373/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"><input class="location" type="hidden" name="location"><input class="referrer" type="hidden" name="referrer">
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email" placeholder="youremail@example.com">
+    </div>
+    <button class="" type="submit"><span>Subscribe</span></button>
+    <script>(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="assets/js/jquery.fitvids.js?v=94e9090f23"></script>
+
+    <script>
+        // maxPages is a global variable that is needed to determine
+        // if we need to load more pages for the infinitescroll, or if
+        // we reached the last page already.
+        var maxPages = parseInt('1');
+    </script>
+    <script src="assets/js/infinitescroll.js?v=94e9090f23"></script>
+
+    
+
+    
+
+</body>

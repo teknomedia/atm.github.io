@@ -1,0 +1,364 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Buyut's Log</title><description>Thoughts, stories and ideas in open source programming</description><link>http://localhost:2373/</link><image><url>http://localhost:2373/favicon.png</url><title>Buyut's Log</title><link>http://localhost:2373/</link></image><generator>Ghost 1.24</generator><lastBuildDate>Fri, 22 Jun 2018 10:26:38 GMT</lastBuildDate><atom:link href="http://localhost:2373/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Menampilkan Image Pada Tabris JS</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Satu gambar mewakili seribu kata, demikian kata pujangga...&lt;/p&gt;
+&lt;p&gt;Dah ah, besok lanjut ya...&lt;/p&gt;
+&lt;p&gt;deh, di github kok gak berubah?&lt;/p&gt;
+&lt;/div&gt;</description><link>http://localhost:2373/menampilkan-image-pada-tabris-js/</link><guid isPermaLink="false">5b1d4afc72f3421e345b366a</guid><category>Tabris JS</category><category>UI</category><category>iOS</category><category>Android</category><dc:creator>Joko Rivai</dc:creator><pubDate>Sun, 10 Jun 2018 16:04:46 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1519483057039-eced84d8025a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=e41487274c66a4d3cd7ac8e0550a3860" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1519483057039-eced84d8025a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=e41487274c66a4d3cd7ac8e0550a3860" alt="Menampilkan Image Pada Tabris JS"&gt;&lt;p&gt;Satu gambar mewakili seribu kata, demikian kata pujangga...&lt;/p&gt;
+&lt;p&gt;Dah ah, besok lanjut ya...&lt;/p&gt;
+&lt;p&gt;deh, di github kok gak berubah?&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Membuat Page Aplikasi Tabris JS</title><description>Sangat mudah membuat Page pada UI aplikasi yang dibangun dengan Tabris JS.</description><link>http://localhost:2373/membuat-page-aplikasi-tabris-js/</link><guid isPermaLink="false">5b1d399d72f3421e345b3660</guid><category>Tabris JS</category><category>Page</category><category>UI</category><category>iOS</category><category>Android</category><dc:creator>Joko Rivai</dc:creator><pubDate>Sun, 10 Jun 2018 14:48:59 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1525770041010-2a1233dd8152?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=48bedd6b6e643fed83abf85637dd0f7f" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1525770041010-2a1233dd8152?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=48bedd6b6e643fed83abf85637dd0f7f" alt="Membuat Page Aplikasi Tabris JS"&gt;&lt;p&gt;Tampilan UI pada Tabris JS, setara dengan Intent pada Android, disebut Page.&lt;/p&gt;
+&lt;p&gt;Komponen-komponen UI Tabris JS dapat ditampilkan langsung pada UI utama aplikasi, yaitu &lt;code&gt;tabris.ui.contentView&lt;/code&gt;, namun dalam aplikasi yang lebih kompleks perlu didesain UI yang lebih terorganisir dan terstruktur, sehingga memberikan UX (&lt;em&gt;User Experience&lt;/em&gt;) yang lebih baik dalam menggunakan aplikasi.&lt;/p&gt;
+&lt;p&gt;Page merupakan layer UI yang setara Intent di Android, yang dapat dibuat dan ditampilkan ketika diperlukan dan di-dispose (dibuang) ketika tidak lagi diperlukan - untuk menjaga performa aplikasi tetap baik.&lt;/p&gt;
+&lt;p&gt;Di Tabris JS, Page merupakan class turunan dari &lt;strong&gt;Composite&lt;/strong&gt;, yang merupakan class turunan juga dari class &lt;strong&gt;Widget&lt;/strong&gt;, sehingga property, event dan method yang tersedia pada class Composite dan Widget dapat pula digunakan pada class Page.&lt;/p&gt;
+&lt;p&gt;Untuk menggunakan Page, class Page harus dideklarasikan dulu dengan &lt;code&gt;const {Page} = require('tabris');&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Umumnya property dan event yang digunakan pada class Page adalah:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;autoDispose&lt;/code&gt; dengan nilai &lt;code&gt;true|false&lt;/code&gt; untuk menentukan apakah Page otomatis di-dispose saat Page tidak lagi aktif di UI, misalnya ketika tombol Home atau Back ditap oleh user. Nilai defaultnya adalah &lt;code&gt;true&lt;/code&gt;, karenanya ketika kita mendesain aplikasi di mana Page digunakan kembali, nilai property ini harus diset ke &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt; merupakan gambar/icon yang akan ditampilkan di navigation bar ketika page sedang aktif. Property ini berupa string (URL nama file) atau objek. Di Windows property ini tidak didukung.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt; adalah judul page yang tampil di navigation bar ketika page aktif.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sedangkan event-event onAppear dan onDisappear umunya digunakan untuk menginisialisasi page (misalnya me-load data, mengecek informasi login, dsb) ketika page diaktifkan di UI dan menyimpan informasi serta hal-hal lainnya ketika page akan dinonaktifkan dari UI.&lt;/p&gt;
+&lt;h2 id="membuatpage"&gt;Membuat Page&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://jokorivai.github.io/static/membuat-aplikasi-baru-pada-tabris-js/"&gt;Siapkan sebuah projek baru&lt;/a&gt; sebelum kita mulai.&lt;/p&gt;
+&lt;p&gt;Buka file &lt;code&gt;src/app.js&lt;/code&gt; dan kosongkan isinya, kemudian ketik kode berikut pada file tersebut:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// deklarasi class NavigationView, Page, Button dan UI
+const {NavigationView, Page, Button, ui} = require('tabris');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;NavigationView diperlukan karena page harus ditampilkan di situ. NavigationView ini akan meng-handle back button pada Android, menampung daftar page yang tersedia pada aplikasi (saat runtime) dan mengatur perpindahan (navigasi) antar page.&lt;/p&gt;
+&lt;p&gt;Oke, tambahkan sebuah NavigationView:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let navView = new NavigationView({
+  left:0, top: 0, right: 0, bottom: 0
+}).appendTo(ui.contentView);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;NavigationView di atas kita beri nama &lt;code&gt;navView&lt;/code&gt;, yang menempati keseluruhan tampilan UI. Pada NavigationView ini kita pasang sebuah page dengan nama &lt;code&gt;page1&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let page1 = new Page({
+  title: 'Page Baru'
+}).appendTo(navView);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sekadar meramaikan, mari kita tambahkan sebuah button pada &lt;code&gt;page1&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let btn = new Button({
+  top: 20,
+  centerX: 0,
+  text: 'Close Page'
+}).appendTo(page1);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;dan kira-kira apa fungsi button &lt;code&gt;btn&lt;/code&gt; ini? Yah, katakanlah untuk menutup page tadi dengan memanggil method &lt;code&gt;dispose()&lt;/code&gt; dari &lt;code&gt;page1&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;btn.on('select', function(){
+  page1.dispose();
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Bila tidak ada kesalahan pengetikan, silahkan jalankan projek Anda:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tabris run ios|android
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Semoga kompilasi sukses!&lt;br&gt;
+Berikut tampilan aplikasi di atas pada iOS simulator:&lt;br&gt;
+&lt;img src="http://localhost:2373/content/images/2018/06/Simulator-Screen-Shot---iPhone-X---2018-06-10-at-23.28.17.png#half" alt="Membuat Page Aplikasi Tabris JS" width="50%" style="border:1px solid black;"&gt;&lt;/p&gt;
+&lt;p&gt;Selamat berkreasi!&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Membuat Aplikasi Baru Pada Tabris JS</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Menyiapkan Aplikasi Baru Pada Tabris JS menggunakan Tabris CLI.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bila Anda belum menginstal Tabris JS dan kelengkapannya, silahkan baca di sini: &lt;a href="https://jokorivai.github.io/static/membangun-aplikasi-pertama-dengan-tabris-js"&gt;Membangun Aplikasi Pertama Dengan Tabris JS&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Siapkan sebuah directory kosong untuk projek, misalnya &lt;code&gt;D:\TabrisJS\app-name-here&lt;/code&gt; (Windows) atau &lt;code&gt;~/TabrisJS/app-name-here&lt;/code&gt; (Mac).&lt;/p&gt;
+&lt;p&gt;Kemudian buat projek baru pada directory tersebut:&lt;/p&gt;
+&lt;p&gt;Mac:&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/membuat-aplikasi-baru-pada-tabris-js/</link><guid isPermaLink="false">5b1d0b3072f3421e345b365c</guid><category>Getting Started</category><category>Tabris JS</category><dc:creator>Joko Rivai</dc:creator><pubDate>Sun, 10 Jun 2018 11:31:43 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=03ab0f1f7f7846337bb3826911dfb778" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=03ab0f1f7f7846337bb3826911dfb778" alt="Membuat Aplikasi Baru Pada Tabris JS"&gt;&lt;p&gt;Menyiapkan Aplikasi Baru Pada Tabris JS menggunakan Tabris CLI.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bila Anda belum menginstal Tabris JS dan kelengkapannya, silahkan baca di sini: &lt;a href="https://jokorivai.github.io/static/membangun-aplikasi-pertama-dengan-tabris-js"&gt;Membangun Aplikasi Pertama Dengan Tabris JS&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Siapkan sebuah directory kosong untuk projek, misalnya &lt;code&gt;D:\TabrisJS\app-name-here&lt;/code&gt; (Windows) atau &lt;code&gt;~/TabrisJS/app-name-here&lt;/code&gt; (Mac).&lt;/p&gt;
+&lt;p&gt;Kemudian buat projek baru pada directory tersebut:&lt;/p&gt;
+&lt;p&gt;Mac:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd ~/TabrisJS/app-name-here
+tabris-init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd &amp;quot;D:\TabrisJS\app-name-here
+tabris init
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Masukkan parameter yang diperlukan dan Tabris CLI akan membuat struktur projek untuk kita:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Jokos-MacBook-Pro:app-name-here jokorivai$ tabris init
+? Your project name app-name-here
+? Initial version 0.1.0
+? Type of project 1 - JavaScript App
+? App ID com.domain.appnamehere
+? App name App Name Here
+? Configure for IDE 1 - None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tunggu sampai proses pembuatan projek selesai.&lt;/p&gt;
+&lt;p&gt;Untuk mengecek dan menginstal dependency yang diperlukan, silahkan build projek:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;tabris build android|ios
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Anda dapat memilih Android atau iOS untuk tiap kali build.&lt;br&gt;
+Tabris CLI akan memeriksa dan mengunduh dependency yang diperlukan dan menginstalnya ke projek - Anda memerlukan koneksi internet saat build perdana ini, baik untuk iOS maupun Android. Setelah proses build selesai dan sukses, kita bisa melanjutkan dengan proses selanjutnya.&lt;/p&gt;
+&lt;p&gt;Source code utama aplikasi adalah file &lt;code&gt;app.js&lt;/code&gt; yang berada dalam directory &lt;code&gt;D:\TabrisJS\app-name-here\src&lt;/code&gt; (Windows) atau &lt;code&gt;~/TabrisJS/app-name-here\src&lt;/code&gt; (Mac).&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Membuat Button Pada Aplikasi Mobile dengan Tabris JS</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Button atau tombol dapat dengan mudah dibuat pada Tabris JS.&lt;/p&gt;
+&lt;p&gt;Untuk membuat button, kita gunakan class &lt;strong&gt;Button&lt;/strong&gt; bawaan Tabris JS. Kita perlu mendeklarasikan class Button ini dengan &lt;code&gt;const {Button} = require('tabris');&lt;/code&gt;, kemudian setelah class tersedia, button dapat dibuat dengan &lt;code&gt;let button1 = new Button({});&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Berikut adalah beberapa property class Button yang&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/membuat-button-pada-aplikasi-mobile-dengan-tabris-js/</link><guid isPermaLink="false">5b1c019d72f3421e345b3651</guid><category>Tabris JS</category><category>Button</category><category>iOS</category><category>Android</category><dc:creator>Joko Rivai</dc:creator><pubDate>Sun, 10 Jun 2018 11:07:44 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1457433575995-8407028a9970?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e0ca51aa7e06e3f3625b39355ad2619" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1457433575995-8407028a9970?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e0ca51aa7e06e3f3625b39355ad2619" alt="Membuat Button Pada Aplikasi Mobile dengan Tabris JS"&gt;&lt;p&gt;Button atau tombol dapat dengan mudah dibuat pada Tabris JS.&lt;/p&gt;
+&lt;p&gt;Untuk membuat button, kita gunakan class &lt;strong&gt;Button&lt;/strong&gt; bawaan Tabris JS. Kita perlu mendeklarasikan class Button ini dengan &lt;code&gt;const {Button} = require('tabris');&lt;/code&gt;, kemudian setelah class tersedia, button dapat dibuat dengan &lt;code&gt;let button1 = new Button({});&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Berikut adalah beberapa property class Button yang paling sering digunakan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;aligment&lt;/code&gt; untuk mengatur perataan teks, dapat berisi &lt;code&gt;'left'&lt;/code&gt;, &lt;code&gt;'center'&lt;/code&gt; dan &lt;code&gt;'right'&lt;/code&gt;. Jika tidak diisi, defaultnya adalah &lt;code&gt;'center'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt; untuk menampilkan icon pada Button. Nilai property ini dapat berupa url langsung atau objek. Nanti kita lihat pada contoh di bawah.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;text&lt;/code&gt; untuk menampilkan teks, isinya harus berupa string.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;textColor&lt;/code&gt; untuk menentukan warna text. Nilainya harus string yang sesuai dengan spesifikasi CSS colors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Contoh nilai warna yang dapat diterapkan pada property &lt;code&gt;textColor&lt;/code&gt; pada Button adalah:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;textColor : &amp;quot;#f00&amp;quot;
+textColor : &amp;quot;#ff0000&amp;quot;
+textColor : &amp;quot;#ff000080&amp;quot; // 50% opacity red
+textColor : &amp;quot;#ff06&amp;quot; // 40% opacity yellow
+textColor : &amp;quot;rgb(255, 0, 0)&amp;quot;
+textColor : &amp;quot;rgba(255, 0, 0, 0.8)&amp;quot;
+textColor : &amp;quot;red&amp;quot;
+textColor : &amp;quot;initial&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Karena Button adalah class turunan dari &lt;strong&gt;Widget&lt;/strong&gt;, Button mewarisi banyak property, event dan method dari class Widget, antara lain: &lt;code&gt;width&lt;/code&gt;, &lt;code&gt;height&lt;/code&gt;, &lt;code&gt;left&lt;/code&gt;, &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;right&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt;, &lt;code&gt;centerY&lt;/code&gt;, &lt;code&gt;center&lt;/code&gt;, &lt;code&gt;opacity&lt;/code&gt;, &lt;code&gt;cornerRadius&lt;/code&gt;, &lt;code&gt;layoutData&lt;/code&gt;, &lt;code&gt;visible&lt;/code&gt;, &lt;code&gt;enabled&lt;/code&gt;, &lt;code&gt;font&lt;/code&gt;, &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;background&lt;/code&gt; dan &lt;code&gt;backgroundColor&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Setelah instance Buttin dibuat, panggil method &lt;code&gt;.appendTo(parentObject)&lt;/code&gt; untuk menampilkannya ke parentObject. parentObject dapat berupa &lt;code&gt;Page&lt;/code&gt;, &lt;code&gt;Widget&lt;/code&gt; lainnya, atau side bar (&lt;code&gt;SideMenu&lt;/code&gt;) dan bisa juga langsung ke &lt;code&gt;tabris.ui.contentView&lt;/code&gt; yang merupakan canvas utama aplikasi.&lt;/p&gt;
+&lt;p&gt;Mari kita lihat beberapa contoh Button:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://jokorivai.github.io/static/membuat-aplikasi-baru-pada-tabris-js/"&gt;Buat projek baru&lt;/a&gt;, kemudian kosongkan isi file &lt;code&gt;app.js&lt;/code&gt; deklarasikan class &lt;code&gt;Button&lt;/code&gt;, &lt;code&gt;ui&lt;/code&gt; pada file tersebut:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const {Button, ui} = require('tabris');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Di bawahnya, tambahkan deklarasi tiga buah button. Button pertama akan berisi teks, button kedua berisi image dan yang terakhir berisi teks dan image.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let btn1 = new Button({
+  centerX: 0, top: 40,
+  text: 'Button 1'
+}).appendTo(ui.contentView);
+
+let btn2 = new Button({
+  centerX: 0, top: [btn1, 20],
+  image: './res/btn1.png'
+}).appendTo(ui.contentView);
+
+let btn3 = new Button({
+  centerX: 0, top: [btn2, 20],
+  image: {src: './res/btn1.png', width: 32, height: 32},
+  text: 'Button 3'
+}).appendTo(ui.contentView);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Perhatikan &lt;code&gt;btn2&lt;/code&gt;, di mana property &lt;code&gt;image&lt;/code&gt; menunjuk file &lt;code&gt;btn1.png&lt;/code&gt; pada folder &lt;code&gt;res&lt;/code&gt;, di manakah lokasi file ini pada directory projek? Tepat di dalam folder projek. Anda harus membuat manual folder &lt;code&gt;res&lt;/code&gt; ini dan menambahkan file-file yang dibutuhkan di dalamnya. Lihat struktur directory berikut:&lt;br&gt;
+&lt;img src="http://localhost:2373/content/images/2018/06/Screen-Shot-2018-06-10-at-19.45.27.png" alt="Membuat Button Pada Aplikasi Mobile dengan Tabris JS"&gt;&lt;br&gt;
+Perhatikan juga baha penyebutan nama projek harus menyebutkan directory utama projek, sehingga penulisannya adalah &lt;code&gt;./res/btn1.png&lt;/code&gt; bukannya &lt;code&gt;res/btn1.png&lt;/code&gt;. Selanjutnya perlu diketahui bahwa ukuran button &lt;code&gt;btn2&lt;/code&gt; akan menyesuaikan dengan ukuran image &lt;code&gt;btn1.png&lt;/code&gt; sehingga Anda perlu menggunakan file image yang ukurannya sesuai agar tidak merusak tampilan aplikasi nantinya.&lt;br&gt;
+Lanjut ke button &lt;code&gt;btn3&lt;/code&gt;, di situ properti image tidak diisi dengan &lt;code&gt;string&lt;/code&gt; nama file sebagaimana &lt;code&gt;btn2&lt;/code&gt;, tapi menggunakan object:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    src: './res/btn1.png',
+    width: 32,
+    height: 32
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tujuannya adalah fleksibilitas. Jika pada &lt;code&gt;btn2&lt;/code&gt; image ditampilkan dengan ukuran apa adanya sehingga ukuran button ikut menyesuaikan, pada &lt;code&gt;btn3&lt;/code&gt; kita dapat menentukan ukuran &lt;code&gt;width&lt;/code&gt; dan &lt;code&gt;height&lt;/code&gt; dari image yang ditampilkan, sehingga meskipun image aslinya berukuran besar atau lebih kecil, tetap akan ditampilkan dengan ukuran 32 x 32 piksel.&lt;/p&gt;
+&lt;p&gt;Untuk melihat tampilan ketiga button ini, jalankan projek dengan &lt;code&gt;tabris run ios|android&lt;/code&gt;&lt;br&gt;
+&lt;kbd&gt;&lt;img src="http://localhost:2373/content/images/2018/06/Screen-Shot-2018-06-10-at-20.00.03.png" alt="Membuat Button Pada Aplikasi Mobile dengan Tabris JS"&gt;&lt;/kbd&gt;&lt;/p&gt;
+&lt;h3 id="eventhandler"&gt;Event Handler&lt;/h3&gt;
+&lt;p&gt;Event utama pada button adalah onSelect, yaitu event yang terjadi ketika user melakukan tap pada button tersebut. Kita akan membuat satu event saja untuk button &lt;code&gt;btn1&lt;/code&gt; sebagai contoh. Anda dapat membuat sendiri event handler untuk button lainnya jika Anda suka.&lt;/p&gt;
+&lt;p&gt;Tambahkan kode berikut ke &lt;code&gt;app.js&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;btn1.on('select', function(){ btn2.enabled = false; });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kode di atas akan men-disable button &lt;code&gt;btn2&lt;/code&gt; jika button &lt;code&gt;btn1&lt;/code&gt; di-tap user.&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;&lt;img src="http://localhost:2373/content/images/2018/06/Simulator-Screen-Shot---iPhone-X---2018-06-10-at-20.06.42.png" alt="Membuat Button Pada Aplikasi Mobile dengan Tabris JS"&gt;&lt;/kbd&gt;&lt;/p&gt;
+&lt;p&gt;Selanjutnya dapat Anda kreasikan sendiri. Semoga bermanfaat.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Tabris JS, QR Code Generator</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Untuk membuat QR Code, pakai Tabris JS sangat mudah!&lt;/p&gt;
+&lt;p&gt;QR Code adalah sejenis grafis yang berisi kode-kode/data tertentu yang di-encode, yang nantinya dapat dibaca kembali data aslinya. Proses membaca kembali dilakukan dengan pemindaian grafis &lt;em&gt;(scanning)&lt;/em&gt; yang nantinya di-decode untuk mendapatkan datanya. QR adalah singkatan dari &lt;em&gt;quick response&lt;/em&gt;. QR Code&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/tabris-js-qr-code-generator/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d6e</guid><category>Getting Started</category><category>Tabris JS</category><dc:creator>Joko Rivai</dc:creator><pubDate>Fri, 08 Jun 2018 08:57:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e3edb1ed96484267911f41022ea2045" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1467007849282-42dad96c2312?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=6e3edb1ed96484267911f41022ea2045" alt="Tabris JS, QR Code Generator"&gt;&lt;p&gt;Untuk membuat QR Code, pakai Tabris JS sangat mudah!&lt;/p&gt;
+&lt;p&gt;QR Code adalah sejenis grafis yang berisi kode-kode/data tertentu yang di-encode, yang nantinya dapat dibaca kembali data aslinya. Proses membaca kembali dilakukan dengan pemindaian grafis &lt;em&gt;(scanning)&lt;/em&gt; yang nantinya di-decode untuk mendapatkan datanya. QR adalah singkatan dari &lt;em&gt;quick response&lt;/em&gt;. QR Code mirip dengan barcode tipe lainnya, hanyasannya bentuknya adalah dua dimensi, yang beda dari barcode umumnya (satu dimensi).&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2373/content/images/2018/06/frame.png" alt="Tabris JS, QR Code Generator"&gt;&lt;/p&gt;
+&lt;p&gt;Kata &amp;quot;QR Code&amp;quot; adalah merek dagang terdaftar atas nama DENSO WAVE INCORPORATED, sebuah perusahaan yang bergerak di bidang otomotif di Jepang, yang mulai diciptakan tahun 1994. Kemampuan QR Code menampung data lebih banyak dari barcode biasa membuatnya cepat diadopsi oleh industri lainnya di luar otomotif, bahkan kini telah menjadi standar dalam dunia aplikasi mobile.&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2373/content/images/2018/06/qr.jpg" alt="Tabris JS, QR Code Generator"&gt;&lt;/p&gt;
+&lt;p&gt;Nah, bagaimana kita dapat memanfaatkan QR Code ini dalam aplikasi mobile kita? Mari kita lihat bersama.&lt;/p&gt;
+&lt;p&gt;Siapkan sebuah projek baru. Anda dapat membaca panduan membuat projek baru aplikasi mobile dengan Tabris JS &lt;a href="https://jokorivai.github.io/static/membuat-aplikasi-baru-pada-tabris-js/"&gt;di sini&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="membuatqrcode"&gt;Membuat QR Code&lt;/h2&gt;
+&lt;p&gt;Tabris JS saat ini belum menyiapkan fitur untuk meng-generate QR Code sendiri, sehingga kita perlu menggunakan library tambahan. Jangan khawatir, tersedia sebuah library JavaScript untuk meng-generate QR Code buatan &lt;strong&gt;Kazuhiko Arase&lt;/strong&gt; yang dapat kita gunakan. Library ini telah di-porting agar kompatibel dengan Tabris JS oleh &lt;a href="https://jokorivai.github.io/static/author/buyut/"&gt;saya sendiri&lt;/a&gt;. Library ini telah saya publikasi di &lt;a href="https://github.com/jokorivai/cordova-plugin-tabrisjs-qrgen"&gt;Github&lt;/a&gt; dan tersedia juga sebagai &lt;a href="https://www.npmjs.com/package/cordova-plugin-tabrisjs-qrgen"&gt;package NPM&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Untuk menginstal library ini ke projek, kunjungi url &lt;a href="https://github.com/jokorivai/cordova-plugin-tabrisjs-qrgen"&gt;Repository Github&lt;/a&gt; dan unduh repository sebagai file ZIP.&lt;br&gt;
+&lt;img src="http://localhost:2373/content/images/2018/06/Screen-Shot-2018-06-09-at-00.54.14.png" alt="Tabris JS, QR Code Generator"&gt;&lt;/p&gt;
+&lt;p&gt;Ekstrak dan copy file &lt;code&gt;tabrisjsqrcode.js&lt;/code&gt; ke dalam directory &lt;code&gt;%projek%/src/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Kemudian buka editor favorit Anda, dan buka file &lt;code&gt;%projek%/src/app.js&lt;/code&gt;.&lt;br&gt;
+Anda akan melihat source code default aplikasi:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;const {Button, TextView, ui} = require('tabris');
+
+let button = new Button({
+  centerX: 0, top: 100,
+  text: 'Show message'
+}).appendTo(ui.contentView);
+
+let textView = new TextView({
+  centerX: 0, top: [button, 50],
+  font: '24px'
+}).appendTo(ui.contentView);
+
+button.on('select', () =&amp;gt; {
+  textView.text = 'Tabris.js rocks!';
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Kini tambahkan deklarasi library QR Code generator dari plugin yang telah diinstal, dan sebuah Canvas. Kode dapat dimodifikasi menjadi seperti berikut:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-js"&gt;const {Button, TextView, Canvas, ui} = require('tabris');
+const QRGen = require('./tabrisjsqrcode.js');
+
+let button = new Button({
+  centerX: 0, top: 100,
+  text: 'Show QRCode'
+}).appendTo(ui.contentView);
+
+let textView = new TextView({
+  centerX: 0, top: [button, 50],
+  font: '24px'
+}).appendTo(ui.contentView);
+
+let qrCanvas = new Canvas({
+  top: [textView, 10],
+  centerX: 0,
+  width: 200,
+  height: 200
+}).appendTo(ui.contentView);
+
+button.on('select', () =&amp;gt; {
+  textView.text = 'Tabris JS QR Code';
+  QRGen.GenerateQRToCanvas('Tabris JS Memang Mantappp!', qrCanvas, 200, 200);
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Perhatikan dengan seksama perubahan yang telah diterapkan pada source code di atas.&lt;/p&gt;
+&lt;p&gt;Kemudian jalankan aplikasi dengan &lt;code&gt;tabris run android|ios&lt;/code&gt;. Sebgai contoh, saya menjalankan dengan &lt;code&gt;tabris run ios&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Setelah aplikasi terbuka di emulator (atau device), klik button Show Message:&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://localhost:2373/content/images/2018/06/Screen-Shot-2018-06-09-at-01.03.15.png" alt="Tabris JS, QR Code Generator"&gt;&lt;/p&gt;
+&lt;p&gt;Jika Anda mendapatkan hasil seperti di atas, Anda telah berhasil membuat QR Code generator dengan Tabris JS. QR Code di atas berisi data &lt;code&gt;Tabris JS Memang Mantappp!&lt;/code&gt; yang dapat Anda uji dengan aplikasi QR Code Scanner atau kamera bawaan iOS (di iPhone, iPad). Aplikasi sejenis banyak tersedia di App Store (iOS) dan Play Store (Android).&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Mambuat Navigasi Sidebar Dengan Tabris JS</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Ghost has a number of different user roles for your team&lt;/p&gt;
+&lt;h3 id="authors"&gt;Authors&lt;/h3&gt;
+&lt;p&gt;The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own posts. Authors are &lt;strong&gt;trusted&lt;/strong&gt; users. If you don't trust users to be allowed to publish their own&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/mambuat-navigasi-sidebar-dengan-tabris-js/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d70</guid><category>Getting Started</category><category>Tabris JS</category><dc:creator>Joko Rivai</dc:creator><pubDate>Fri, 08 Jun 2018 08:57:00 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1528254609158-ae7dfaa48ab3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=ad92e92401a98dd35c11caac4bf15e95" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1528254609158-ae7dfaa48ab3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=ad92e92401a98dd35c11caac4bf15e95" alt="Mambuat Navigasi Sidebar Dengan Tabris JS"&gt;&lt;p&gt;Ghost has a number of different user roles for your team&lt;/p&gt;
+&lt;h3 id="authors"&gt;Authors&lt;/h3&gt;
+&lt;p&gt;The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own posts. Authors are &lt;strong&gt;trusted&lt;/strong&gt; users. If you don't trust users to be allowed to publish their own posts, you shouldn't invite them to Ghost admin.&lt;/p&gt;
+&lt;h3 id="editors"&gt;Editors&lt;/h3&gt;
+&lt;p&gt;Editors are the 2nd user level in Ghost. Editors can do everything that an Author can do, but they can also edit and publish the posts of others - as well as their own. Editors can also invite new authors to the site.&lt;/p&gt;
+&lt;h3 id="administrators"&gt;Administrators&lt;/h3&gt;
+&lt;p&gt;The top user level in Ghost is Administrator. Again, administrators can do everything that Authors and Editors can do, but they can also edit all site settings and data, not just content. Additionally, administrators have full access to invite, manage or remove any other user of the site.&lt;/p&gt;
+&lt;h3 id="theowner"&gt;The Owner&lt;/h3&gt;
+&lt;p&gt;There is only ever one owner of a Ghost site. The owner is a special user which has all the same permissions as an Administrator, but with two exceptions: The Owner can never be deleted. And in some circumstances the owner will have access to additional special settings if applicable — for example, billing details, if using Ghost(Pro).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;It's a good idea to ask all of your users to fill out their user profiles, including bio and social links. These will populate rich structured data for posts and generally create more opportunities for themes to fully populate their design.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Welcome To Buyut's Log</title><description>Here are a few words about this blog and what I am interested ini.</description><link>http://localhost:2373/welcome/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d76</guid><category>about</category><category>Getting Started</category><dc:creator>Joko Rivai</dc:creator><pubDate>Thu, 07 Jun 2018 08:57:58 GMT</pubDate><media:content url="http://localhost:2373/content/images/2018/06/coding-926242_1920-1.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="http://localhost:2373/content/images/2018/06/coding-926242_1920-1.jpg" alt="Welcome To Buyut's Log"&gt;&lt;p&gt;Maaf ya kalau berantakan :)&lt;/p&gt;
+&lt;p&gt;Setelah berulangkali kerepotan dengan web hosting dan sewa domain yang lupa atau tak terbayar, dan pada akhirnya harus daftar ulang, memindahkan konten ke domain dan hosting baru, akhirnya saya pun menjadi malas menulis. Tapi waktu mengubah seseorang. Adanya engine &lt;a href="https://github.com/paladini/ghost-on-github-pages"&gt;Ghost On Github Pages&lt;/a&gt; yang membuat publikasi dapat dilakukan lokal kapan saja - dan nantinya di-push ke Github GH-Pages repository, sebagaimana repo lainnya - kembali merangsang saya untuk menulis.&lt;br&gt;
+Kenapa Github? Karena saya ingin menulis mengenai tool-tool open source yang kira-kira bermanfaat dan belum terlalu banyak dijumpai dalam Bahasa Indonesia. Jadi, Anda sudah dapat menyimpulkan bahwa blog ini berisi hal-hal teknis, khususnya teknologi informasi, lebih khusus lagi: Pemrograman.&lt;/p&gt;
+&lt;h3 id="dasarpikiran"&gt;Dasar Pikiran:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Saya menulis bukan karena saya pintar. Tapi karena saya sedang belajar. Ini sesuai pepatah populer yang mengatakan, &amp;quot;Pintar, membuat. Bodoh, mengajar.&amp;quot; Maksudnya kurang lebih: Orang yang telah pintar dengan suatu hal cenderung berbuat dan berkreasi dengan sesuatu itu, sementara yang masih awam atau baru mempelajarinya justru menulis dan mengajar ke orang lain.&lt;/li&gt;
+&lt;li&gt;Bahwasannya tulisan-tulisan saya nantinya adalah catatan tentang perkenalan saya dan pembelajaran saya akan sesuatu, bukan referensi dan panduan teknis, karena saya menulisnya saat saya mempelajarinya, di mana saya dapat mengambil screenshot dan membuat catatan atas apa yang saya alami dan mungkin juga menambahkan pemikiran dan ide yang timbul di pikiran saya.&lt;/li&gt;
+&lt;li&gt;Perlu diketahui bahwa kemungkinan besar saya akan menulis lebih banyak tentang &lt;a href="https://tabrisjs.com/"&gt;Tabris JS&lt;/a&gt;, sebuah JavaScript framework yang sangat membantu membangun aplikasi native di platform Android, iOS dan Windows Mobile dalam bahasa JavaScript, yang kemudian di-bridge menggunakan &lt;a href="https://cordova.apache.org"&gt;Cordova&lt;/a&gt;. Tabris JS tidak menggunkan embedded web browser sebagaimana aplikasi hybrid seperti Onsen UI, Ionic dan sejenisnya. Tabris JS lebih mirip dengan React Native dan NativeScript. Kita akan membahas tentang Tabris JS lebih banyak nanti.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Salam hangat,&lt;br&gt;
+Buyut.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Berkenalan Dengan Tabris JS</title><description>Tabris JS, seperti React Native dan NativeScript, adalah framework Tabris JS adalah salah satu framework untuk membangun **Aplikasi Native** untuk Android, iOS dan Windows Mobile.</description><link>http://localhost:2373/berkenalan-dengan-tabris-js/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d74</guid><category>Getting Started</category><category>Tabris JS</category><dc:creator>Joko Rivai</dc:creator><pubDate>Thu, 07 Jun 2018 08:57:57 GMT</pubDate><media:content url="https://casper.ghost.org/v1.0.0/images/writing.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://casper.ghost.org/v1.0.0/images/writing.jpg" alt="Berkenalan Dengan Tabris JS"&gt;&lt;p&gt;Tabris JS adalah salah satu framework untuk membangun &lt;strong&gt;Aplikasi Native&lt;/strong&gt; untuk Android, iOS dan Windows Mobile.&lt;/p&gt;
+&lt;p&gt;Tabris JS, seperti React Native dan NativeScript, adalah framework JavaScript untuk membangun aplikasi mobile (iOS, Android dan Windows Mobile) dengan pendekatan &lt;strong&gt;native bridging&lt;/strong&gt;. Tak seperti Ionic, Onsen UI atau framwork hybrid lainnya yang memanfaatkan HTML5 dan platform Cordova sebagai bridge, Tabris JS tidak menggunakan WebView untuk UI aplikasi. Dengan demikian, utilitas DOM dan property-property-nya tak dapat digunakan di Tabris JS. Namun begitu, Tabris JS tetap merupakan pilihan yang bagus karena memberikan bebarapa keuntungan, antara lain - yang paling penting - performa aplikasi yang lebih bagus daripada hybrid, karena Tabris JS merender UI langsung di atas layer UI native milik masing-masing mobile OS, bukannya merender UI pada embedded WebView. Tabris JS memberikan UI yang terlihat lebih orisinil, karena pada tiap platform, UI Tabris JS tampil sama dengan tampilan UI native. Ini dapat juga menjadi kekurangan Tabris JS karena pada tiap platform tampilan aplikasi yang sama akan terlihat berbeda. Beberapa developer mengatakannya sebagai &lt;strong&gt;Inconsistent UI&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Tabris JS menggunakan JavaScript klasik (vanilla) dalam pemrogramannya, namun belakangan Tabris JS sudah merilis dukungan untuk penulisan programnya menggunakan TypeScript dan memungkinkan penulisan UI secara deklaratif dengan syntax mirip XML. Saya sendiri lebih menyukai deklarasi UI dalam JavaScript murni karena saya kurang mahir menulisnya dalam TypeScript dan XML-alike syntax. Di sisi lain TypeScript perlu di-transpile (didecode) menjadi JavaScript klasik sebelum dieksekusi di tiap platform mobile, yang menurut saya, justru mengurangi performa. Beberapa pendapat mendukung TypeScript untuk aplikasi skala besar karena adanya proteksi terhadap kesalahan yang mungkin terjadi pada JavaScript sebagai bahasa &amp;quot;Weak Typing&amp;quot;. Sebagai contoh, JavaScript mengenal tipe &lt;em&gt;number&lt;/em&gt;, namun tidak ada pemeriksaan apakah number ini adalah &lt;em&gt;float (bilangan pecahan)&lt;/em&gt; atau &lt;em&gt;integer&lt;/em&gt;. Pendapat ini ada benarnya, namun saya tidak peduli untuk saat ini. Toh, di situ lah kita akan belajar berhati-hati dan disiplin dalam menulis kode, kan?&lt;/p&gt;
+&lt;p&gt;Saat tulisan ini ditulis, Tabris JS telah mencapai versi 2.5.1 dengan beragam fitur. Kita akan melihat fitur-fitur ini nanti. Untuk saat ini kita cukup membahas tentang Tabris JS secara umum saja.&lt;/p&gt;
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Silahkan baca tulisan tentang &lt;a href="https://jokorivai.github.io/static/membangun-aplikasi-pertama-dengan-tabris-js"&gt;Membangun Aplikasi Pertama Dengan Tabris JS&lt;/a&gt; sebagai langkah awal.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Membangun Aplikasi Pertama Dengan Tabris JS</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Kita akan menginstall Tabris JS, membuat aplikasi pertama dan mengujinya di iOS dan Android.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Catatan, saya bukan penggemar Linux dan tidak punya mesin Linux, sehingga saat ini saya tak dapat menulis tentang Membangun Aplikasi dengan Tabris JS di platform Linux.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="instalasi"&gt;Instalasi&lt;/h2&gt;
+&lt;p&gt;Sebelum kita membahas mengenai instalasi, terlebih dahulu mari kita&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/membangun-aplikasi-pertama-dengan-tabris-js/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d72</guid><category>Getting Started</category><category>Tabris JS</category><dc:creator>Joko Rivai</dc:creator><pubDate>Thu, 07 Jun 2018 08:57:56 GMT</pubDate><media:content url="https://images.unsplash.com/photo-1514996550219-62672472d03b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=30e79fb6a41ae06eb9aff240a4fb0f6c" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://images.unsplash.com/photo-1514996550219-62672472d03b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ&amp;s=30e79fb6a41ae06eb9aff240a4fb0f6c" alt="Membangun Aplikasi Pertama Dengan Tabris JS"&gt;&lt;p&gt;Kita akan menginstall Tabris JS, membuat aplikasi pertama dan mengujinya di iOS dan Android.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Catatan, saya bukan penggemar Linux dan tidak punya mesin Linux, sehingga saat ini saya tak dapat menulis tentang Membangun Aplikasi dengan Tabris JS di platform Linux.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="instalasi"&gt;Instalasi&lt;/h2&gt;
+&lt;p&gt;Sebelum kita membahas mengenai instalasi, terlebih dahulu mari kita lihat kebutuhan-kebutuhan minimal yang diperlukan. Antara lain, kebutuhan hardware seperti prosesor, Kapasitas penyimpanan, ukuran layar Dan RAM. Seperti saya katakan di atas, saya tidak akan membahas mengenai instalasi dan pembuatan aplikasi mobile di sistem operasi Linux. Karena nya di tulisan ini hanya saya bahas seputar sistem operasi OS X dan Windows. Jika spesifikasi komputer anda tidak memenuhi spesifikasi minimal yang saya tulis berikut ini, Kemungkinan Anda tetap akan dapat membuat aplikasi dengan menggunakan Tabris JS namun akan mengalami kendala seperti proses kompilasi yang lambat dan mungkin kendala-kendala lainnya.&lt;/p&gt;
+&lt;h3 id="kebutuhanminimal"&gt;Kebutuhan Minimal&lt;/h3&gt;
+&lt;p&gt;Kebutuhan hardware yang saya tulis di bawah tidak baku dan harus persis sama. Ini hanya referensi saja, yang kurang lebih merupakan spesifikasi minimal untuk membuat aplikasi mobile untuk iOS dan Android. Sedangkan untuk software, semua yang saya tulis sifatnya wajib dan diperlukan.&lt;/p&gt;
+&lt;h4 id="kebutuhanuntukwindows"&gt;Kebutuhan Untuk Windows&lt;/h4&gt;
+&lt;p&gt;Untuk Windows, anda memerlukan komputer atau laptop dengan prosesor minimal Intel Core 2 Duo, RAM 4 GB ukuran layar 1366 X 768 Pixel. Anda memerlukan penyimpanan yang kosong sebesar kira kira 10 GB. Jika penyimpanan komputer atau laptop Anda menggunakan SSD maka akan lebih bagus karena proses kompilasi akan lebih cepat. Untuk sistem operasinya sendiri anda dapat menggunakan Windows 7, Windows 8 atau Windows 10 baik 32 bit maupun 64 bit.&lt;/p&gt;
+&lt;p&gt;Sebagai catatan, di Windows Anda hanya dapat membuat aplikasi mobile untuk Android dan Windows Mobile, anda tidak dapat membuat aplikasi mobile untuk iOS, karena pada Windows kebutuhan yang diperlukan untuk membangun aplkasi mobile untuk iOS yaitu &lt;strong&gt;XCode&lt;/strong&gt; tidak tersedia dan saat ini hanya tersedia pada platform Mac OSX.&lt;/p&gt;
+&lt;p&gt;Anda harus memasang juga Java ( JDK versi 8) yang dapat Anda unduh dari &lt;a href="http://java.com/en/download"&gt;java.com&lt;/a&gt;, kemudian instal Android SDK dari &lt;a href="http://android.pk/android-sdk.php"&gt;Android.pk&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="kebutuhanuntukmacosx"&gt;Kebutuhan Untuk Mac OSX&lt;/h4&gt;
+&lt;p&gt;Jika anda menggunakan Mac, Anda dapat menggunakan semua versi Mac dengan RAM 4GB, Ruang penyimpanan hard disk yang kosong sebesar 10 GB, dan sistem operasi minimal 10.7 (Lion). Tutorial yang saya tulis ini menggunakan sistem operasi High Sierra pada MacBook Pro atau yang terbaru, RAM 8 GB dan penyimpanan SSD 256 GB. Kemudian Anda membutuhkan XCode yang dapat diinstal dari App Store dengan update Command Line Tools.&lt;/p&gt;
+&lt;p&gt;Jika semua kebutuhan di atas terpenuhi, silahkan unduh Android SDK. Anda dapat memperoleh Android SDK versi &lt;a href="http://android.pk/android-sdk.php"&gt;klasik di sini&lt;/a&gt; - bukan yang diunduh dari Android.com, karena tidak lengkap. Saya pun tidak menyarankan untuk menggunakan Android SDK bawaan Android Studio, karena ukuran bundel unduhan yang cukup besar dan Anda memerlukan ekstra ruang harddisk untuk menginstalnya. Java sudah tersedia di Mac OSX - dan jika belum tersedia di Mac Anda, silahkan install dari &lt;a href="http://java.com/en/download/"&gt;java.com&lt;/a&gt;. Pilih versi 8 yang sesuai dengan tipe prosesor Anda, apakah 32 bit atau 64 bit.&lt;/p&gt;
+&lt;h3 id="instalasidiwindows"&gt;Instalasi di Windows&lt;/h3&gt;
+&lt;p&gt;Tag archives are like dedicated home-pages for each category of content that you have. They have their own pages, their own RSS feeds, and can support their own cover images and meta data.&lt;/p&gt;
+&lt;h3 id="instalasidimacosx"&gt;Instalasi Di Mac OSX&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Install Node JS. Anda dapat mendownload Node JS &lt;a href="http://nodejs.org"&gt;di sini&lt;/a&gt;. Sebaiknya Anda install versi terbaru. Anda dapat mengecek apakah Node sudah terinstall dengan benar dengan mengetik &lt;code&gt;node -v&lt;/code&gt; dan mengecek NPM (Node Package Manager) dengan &lt;code&gt;npm -v&lt;/code&gt;. Jika keduanya sudah ok, silahkan lanjutkan dengan langkah kedua.&lt;/li&gt;
+&lt;li&gt;Instal Tabris CLI dengan perintah &lt;code&gt;sudo npm install tabris-cli -g&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install Cordova secara global dengan &lt;code&gt;sudo npm install cordova -g&lt;/code&gt;. Meskipun Tabris CLI telah menyertakan Cordova untuk mengompilasi projek, Anda tetap memerlukan Cordova yang diinstal terpisah secara global untuk keperluan di luar Tabris CLI, contohnya untuk menambahkan plugin Cordova ke projek.&lt;/li&gt;
+&lt;li&gt;s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="membuatprojek"&gt;Membuat Projek&lt;/h2&gt;
+&lt;p&gt;Inside the Ghost editor, you can drag and drop tags into a specific order. The first tag in the list is always given the most importance, and some themes will only display the primary tag (the first tag in the list) by default. So you can add the most important tag which you want to show up in your theme, but also add a bunch of related tags which are less important.&lt;/p&gt;
+&lt;h3 id="membuatprojekdengantabriscli"&gt;Membuat Projek dengan Tabris CLI&lt;/h3&gt;
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;News&lt;/strong&gt;, Cycling, Bart Stevens, Extreme Sports&lt;/mark&gt;&lt;/p&gt;
+&lt;h3 id="menambahkanplatformtabrisjsuntukiosdanandroid"&gt;Menambahkan Platform Tabris JS (untuk iOS dan Android)&lt;/h3&gt;
+&lt;p&gt;In this example, &lt;strong&gt;News&lt;/strong&gt; is the primary tag which will be displayed by the theme, but the post will also still receive all the other tags, and show up in their respective archives.&lt;/p&gt;
+&lt;h2 id="melakukankompilasidanpengetesan"&gt;Melakukan Kompilasi dan Pengetesan&lt;/h2&gt;
+&lt;p&gt;Sometimes you may want to assign a post a specific tag, but you don't necessarily want that tag appearing in the theme or creating an archive page. In Ghost, hashtags are private and can be used for special styling.&lt;/p&gt;
+&lt;h3 id="localbuilddanremotebuild"&gt;Local Build dan Remote Build&lt;/h3&gt;
+&lt;h3 id="mendapatkanbuildkey"&gt;Mendapatkan Build Key&lt;/h3&gt;
+&lt;h3 id="mengujiaplikasipadaemulator"&gt;Menguji Aplikasi Pada Emulator&lt;/h3&gt;
+&lt;h4 id="iosemulator"&gt;iOS Emulator&lt;/h4&gt;
+&lt;h4 id="androidemulator"&gt;Android Emulator&lt;/h4&gt;
+&lt;h4 id="menggunakantabrisjsdeveloperapp"&gt;Menggunakan Tabris JS Developer App&lt;/h4&gt;
+&lt;h2 id="menambahkancordovaplugin"&gt;Menambahkan Cordova Plugin&lt;/h2&gt;
+&lt;p&gt;For example, if you sometimes publish posts with video content - you might want your theme to adapt and get rid of the sidebar for these p&lt;br&gt;
+osts, to give more space for an embedded video to fill the screen. In this case, you could use private tags to tell your theme what to do.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;&lt;strong&gt;News&lt;/strong&gt;, Cycling, #video&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;Here, the theme would assign the post publicly displayed tags of &lt;code&gt;News&lt;/code&gt;, and &lt;code&gt;Cycling&lt;/code&gt; - but it would also keep a private record of the post being tagged with &lt;code&gt;#video&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In your theme, you could then look for private tags conditionally and give them special formatting:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-javascript"&gt;var {t} = require('tabris');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can find documentation for theme development techniques like this and many more over on Ghost's extensive &lt;a href="https://themes.ghost.org/"&gt;theme documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Advanced Markdown tips</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;There are lots of powerful things you can do with the Ghost editor&lt;/p&gt;
+&lt;p&gt;If you've gotten pretty comfortable with &lt;a href="http://localhost:2373/the-editor/"&gt;all the basics&lt;/a&gt; of writing in Ghost, then you may enjoy some more advanced tips about the types of things you can do with Markdown!&lt;/p&gt;
+&lt;p&gt;As with the last post about&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/advanced-markdown/</link><guid isPermaLink="false">5b18f391fbaf7f16f8962d6c</guid><category>Getting Started</category><dc:creator>Joko Rivai</dc:creator><pubDate>Thu, 07 Jun 2018 08:57:53 GMT</pubDate><media:content url="https://casper.ghost.org/v1.0.0/images/advanced.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://casper.ghost.org/v1.0.0/images/advanced.jpg" alt="Advanced Markdown tips"&gt;&lt;p&gt;There are lots of powerful things you can do with the Ghost editor&lt;/p&gt;
+&lt;p&gt;If you've gotten pretty comfortable with &lt;a href="http://localhost:2373/the-editor/"&gt;all the basics&lt;/a&gt; of writing in Ghost, then you may enjoy some more advanced tips about the types of things you can do with Markdown!&lt;/p&gt;
+&lt;p&gt;As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.&lt;/p&gt;
+&lt;h2 id="specialformatting"&gt;Special formatting&lt;/h2&gt;
+&lt;p&gt;As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;s&gt;strike through&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;mark&gt;highlight&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;*escaped characters*&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="writingcodeblocks"&gt;Writing code blocks&lt;/h2&gt;
+&lt;p&gt;There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, &lt;code&gt;like this&lt;/code&gt;. Larger snippets of code can be displayed across multiple lines using triple back ticks:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.my-link {
+    text-decoration: underline;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you want to get really fancy, you can even add syntax highlighting using &lt;a href="http://prismjs.com/"&gt;Prism.js&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="fullbleedimages"&gt;Full bleed images&lt;/h2&gt;
+&lt;p&gt;One neat trick which you can use in Markdown to distinguish between different types of images is to add a &lt;code&gt;#hash&lt;/code&gt; value to the end of the source URL, and then target images containing the hash with special styling. For example:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://casper.ghost.org/v1.0.0/images/walking.jpg#full" alt="Advanced Markdown tips"&gt;&lt;/p&gt;
+&lt;p&gt;which is styled with...&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;img[src$=&amp;quot;#full&amp;quot;] {
+    max-width: 100vw;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This creates full-bleed images in the Casper theme, which stretch beyond their usual boundaries right up to the edge of the window. Every theme handles these types of things slightly differently, but it's a great trick to play with if you want to have a variety of image sizes and styles.&lt;/p&gt;
+&lt;h2 id="referencelists"&gt;Reference lists&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;The quick brown &lt;a href="https://en.wikipedia.org/wiki/Fox" title="Wikipedia: Fox"&gt;fox&lt;/a&gt;, jumped over the lazy &lt;a href="https://en.wikipedia.org/wiki/Dog" title="Wikipedia: Dog"&gt;dog&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.&lt;/p&gt;
+&lt;h2 id="creatingfootnotes"&gt;Creating footnotes&lt;/h2&gt;
+&lt;p&gt;The quick brown fox&lt;sup class="footnote-ref"&gt;&lt;a href="#fn1" id="fnref1"&gt;[1]&lt;/a&gt;&lt;/sup&gt; jumped over the lazy dog&lt;sup class="footnote-ref"&gt;&lt;a href="#fn2" id="fnref2"&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Footnotes are a great way to add additional contextual details when appropriate. Ghost will automatically add footnote content to the very end of your post.&lt;/p&gt;
+&lt;h2 id="fullhtml"&gt;Full HTML&lt;/h2&gt;
+&lt;p&gt;Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Ghost editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;amp;showinfo=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;hr class="footnotes-sep"&gt;
+&lt;section class="footnotes"&gt;
+&lt;ol class="footnotes-list"&gt;
+&lt;li id="fn1" class="footnote-item"&gt;&lt;p&gt;Foxes are red &lt;a href="#fnref1" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn2" class="footnote-item"&gt;&lt;p&gt;Dogs are usually not red &lt;a href="#fnref2" class="footnote-backref"&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Setting up your own Ghost theme</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Creating a totally custom design for your publication&lt;/p&gt;
+&lt;p&gt;Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. However, Ghost can also be completely themed to suit your needs. Rather than just giving&lt;/p&gt;&lt;/div&gt;</description><link>http://localhost:2373/themes/</link><guid isPermaLink="false">5b18f390fbaf7f16f8962d6a</guid><category>Getting Started</category><dc:creator>Joko Rivai</dc:creator><pubDate>Thu, 07 Jun 2018 08:57:52 GMT</pubDate><media:content url="https://casper.ghost.org/v1.0.0/images/design.jpg" medium="image"/><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;img src="https://casper.ghost.org/v1.0.0/images/design.jpg" alt="Setting up your own Ghost theme"&gt;&lt;p&gt;Creating a totally custom design for your publication&lt;/p&gt;
+&lt;p&gt;Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. However, Ghost can also be completely themed to suit your needs. Rather than just giving you a few basic settings which act as a poor proxy for code, we just let you write code.&lt;/p&gt;
+&lt;p&gt;There are a huge range of both free and premium pre-built themes which you can get from the &lt;a href="http://marketplace.ghost.org"&gt;Ghost Theme Marketplace&lt;/a&gt;, or you can simply create your own from scratch.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://marketplace.ghost.org"&gt;&lt;img src="https://casper.ghost.org/v1.0.0/images/marketplace.jpg" alt="Setting up your own Ghost theme"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Anyone can write a completely custom Ghost theme, with just some solid knowledge of HTML and CSS&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ghost themes are written with a templating language called handlebars, which has a bunch of dynamic helpers to insert your data into template files. Like &lt;code&gt;{{author.name}}&lt;/code&gt;, for example, outputs the name of the current author.&lt;/p&gt;
+&lt;p&gt;The best way to learn how to write your own Ghost theme is to have a look at &lt;a href="https://github.com/TryGhost/Casper"&gt;the source code for Casper&lt;/a&gt;, which is heavily commented and should give you a sense of how everything fits together.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;default.hbs&lt;/code&gt; is the main template file, all contexts will load inside this file unless specifically told to use a different template.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;post.hbs&lt;/code&gt; is the file used in the context of viewing a post.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;index.hbs&lt;/code&gt; is the file used in the context of viewing the home page.&lt;/li&gt;
+&lt;li&gt;and so on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We've got &lt;a href="http://themes.ghost.org/docs/about"&gt;full and extensive theme documentation&lt;/a&gt; which outlines every template file, context and helper that you can use.&lt;/p&gt;
+&lt;p&gt;If you want to chat with other people making Ghost themes to get any advice or help, there's also a &lt;strong&gt;#themes&lt;/strong&gt; channel in our &lt;a href="https://slack.ghost.org"&gt;public Slack community&lt;/a&gt; which we always recommend joining!&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item></channel></rss>
